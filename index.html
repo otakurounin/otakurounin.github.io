@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>石策竜喜のホームページ</title>
+    <title>石策竜喜のホームページ(@github)</title>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    japonicus
+    japonicus sum.
 <!--    <header id ="header">
         <h1>石策竜喜のホームページ</h1>
     </header>
-    <div id="container">
+    <h2>統計学</h2>
         <aside>
             <p>アインシュタインは \( E=mc^2 \) の公式を導きました。</p>
             \(
@@ -35,18 +35,25 @@
                 \( \displaystyle {}_n C_k =\frac{n!}{k!(n-k)! }, 0!=1 \)
 
                     </aside>
-        <main>
+            <main>
             <h2>歴史</h2>
             <h3>古人類</h3>
             <a href="Strepsirrhini.html"></a><br>
     
             <h3>日本史</h3>
             <a href="pseudo_upper_paleolithic.html"></a><br>
-    
-        </main>
+    --> 
+            \begin{eqnarray}
+            \sum_{ i = 1 }^{ n } (x_i - μ)^2 = \sum_{ i = 1 }^{ n } {(x_i - \bar{x}) - (\bar{x} - μ)}^2
+            = \sum_{ i = 1 }^{ n } (x_i - \bar{x})^2 + 2\sum_{ i = 1 }^{ n } (x_i - \bar{x})(\bar{x} - μ) + \sum_{ i = 1 }^{ n } (\bar{x} - μ)^2
+            = \sum_{ i = 1 }^{ n } (x_i - \bar{x})^2 + n(\bar{x} - μ)^2
+            \end{eqnarray}
+            \bar{x}
+        <div id="container">
+                </main>
     </div>
     <footer>
 
     </footer>
---></body>
+</body>
 </html>
