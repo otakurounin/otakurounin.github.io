@@ -42,13 +42,108 @@
     
             <h3>日本史</h3>
             <a href="pseudo_upper_paleolithic.html"></a><br>
-    --> 
+    -->
+    <dd>算術平均</dd>
+    <dt>\begin{eqnarray}
+        \frac{1}{n}\sum_{i=1}^n x_i = \frac{x_1 + x_2 +  \cdots + x_n}{n} 
+        \end{eqnarray}
+    </dt>
+    <p>算術平均の性質</p>
+    <ol>
+        <li>平均からの偏差の和は0となる。すなわち、<br>
+        \begin{eqnarray}
+        \sum_{i=1}^n (x_i - \bar{x}) = 0 
+        \end{eqnarray}
+        </li>
+        <li>偏差の平方和の中で最小となるのは、平均からの偏差の平方和である。すなわち、任意のaについて、<br>
             \begin{eqnarray}
-            \sum_{ i = 1 }^{ n } (x_i - μ)^2 = \sum_{ i = 1 }^{ n } {(x_i - \bar{x}) - (\bar{x} - μ)}^2
-            = \sum_{ i = 1 }^{ n } (x_i - \bar{x})^2 + 2\sum_{ i = 1 }^{ n } (x_i - \bar{x})(\bar{x} - μ) + \sum_{ i = 1 }^{ n } (\bar{x} - μ)^2
-            = \sum_{ i = 1 }^{ n } (x_i - \bar{x})^2 + n(\bar{x} - μ)^2
+            \sum_{i=1}^n (x_i - \bar{x})^2 ≤ \sum_{i=1}^n (x_i - a)^2 
             \end{eqnarray}
-            \bar{x}
+    
+        </li>
+    </ol>
+    <p>性質1の証明</p>
+    \begin{eqnarray}
+    \sum_{i=1}^n (x_i - \bar{x}) = \sum_{i=1}^n x_i - \bar{x} \sum_{i=1}^n = n\bar{x} - \bar{x}n = 0 
+    \end{eqnarray}
+    <p>性質2の証明</p>
+    \begin{eqnarray}
+    \sum_{i=1}^n (x_i - \bar{x})^2 
+    = \sum_{ i = 1 }^{ n } {(x_i - \bar{x}) - (\bar{x} - a)}^2 
+    = \sum_{ i = 1 }^{ n } ((x_i - \bar{x})^2 + 2(x_i - \bar{x})(\bar{x} - a) + (\bar{x} - a)^2)
+    = \sum_{ i = 1 }^{ n } (x_i - \bar{x})^2 + 2\sum_{ i = 1 }^{ n } (x_i - \bar{x})(\bar{x} - a) + \sum_{ i = 1 }^{ n } (\bar{x} - a)^2
+    = \sum_{ i = 1 }^{ n } (x_i - \bar{x})^2 + 2(\bar{x} - a)\sum_{ i = 1 }^{ n } (x_i - \bar{x}) + n(\bar{x} - a)^2
+    = \sum_{ i = 1 }^{ n } (x_i - \bar{x})^2 + n(\bar{x} - a)^2
+    ≤ \sum_{i=1}^n (x_i - a)^2 
+    \end{eqnarray}
+    <br>性質1により、第2項は0。等号成立は、\[\bar{x} - a = 0 \]のとき。
+    <dd>分散</dd>
+    <dt>\begin{eqnarray}
+        \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2 
+        \end{eqnarray}
+    </dt>
+    <p>分散はまた、
+        \begin{eqnarray}
+        \frac{1}{n}\sum_{i=1}^n x_i^2 - \bar{x}^2
+        \end{eqnarray}
+    によっても計算できる。
+    </p>
+    <p>証明
+        \begin{eqnarray}
+        \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2 
+        = \frac{1}{n}\sum_{i=1}^n (x_i^2 -2\bar{x}x_i + \bar{x}^2)
+        = \frac{1}{n}(\sum_{i=1}^n x_i^2 -2\bar{x}\sum_{i=1}^n x_i + \bar{x}^2\sum_{i=1}^n )
+        = \frac{1}{n}(\sum_{i=1}^n x_i^2 -2\bar{x}*n\bar{x} + n\bar{x}^2 )
+        = \frac{1}{n}(\sum_{i=1}^n x_i^2 - n\bar{x}^2 )
+        = \frac{1}{n}\sum_{i=1}^n x_i^2 - \bar{x}^2
+        \end{eqnarray}
+    </p>
+    <p>後者の計算方法は、手計算する場合にも概して定義通りの計算より簡単であるが、特に計算機で計算する場合、誤差を少なくできる利点がある。</p>
+    <dd>標本分散</dd>
+    <dt>\begin{eqnarray}
+        \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2 
+        \end{eqnarray}
+    </dt>
+
+    <p>導出
+    \begin{eqnarray}
+    \sum_{ i = 1 }^{ n } (x_i - μ)^2 = \sum_{ i = 1 }^{ n } {(x_i - \bar{x}) - (\bar{x} - μ)}^2
+    = \sum_{ i = 1 }^{ n } (x_i - \bar{x})^2 + 2\sum_{ i = 1 }^{ n } (x_i - \bar{x})(\bar{x} - μ) + \sum_{ i = 1 }^{ n } (\bar{x} - μ)^2
+    = \sum_{ i = 1 }^{ n } (x_i - \bar{x})^2 + n(\bar{x} - μ)^2
+    \end{eqnarray}
+    </p>
+    <p>両辺の期待値を取って、
+    \begin{eqnarray}
+    E(\sum_{ i = 1 }^{ n } (x_i - μ)^2) = E(\sum_{ i = 1 }^{ n } (x_i - \bar{x})^2) + nE((\bar{x} - μ)^2)
+    \end{eqnarray}
+    \begin{eqnarray}
+    \sum_{ i = 1 }^{ n } V(x_i) = E(\sum_{ i = 1 }^{ n } (x_i - \bar{x})^2) + nV(\bar{x})
+    \end{eqnarray}
+    </p>
+    <p>ここで、
+    \begin{eqnarray}
+    V(x_1) = V(x_2) = \cdots = V(x_n) = \sigma^2
+    \end{eqnarray}
+    \begin{eqnarray}
+    V(\bar{x}) = V(\frac{x_1 + x_2 + \cdots + x_n}{n}) = V(\frac{x_1}{n}) + V(\frac{x_2}{n}) + \cdots + V(\frac{x_n}{n}) = \frac{1}{n^2}\sigma^2 + \frac{1}{n^2}\sigma^2 + \cdots + \frac{1}{n^2}\sigma^2 = \frac{1}{n}\sigma^2
+    \end{eqnarray}
+    であるから、
+    \begin{eqnarray}
+    n\sigma^2 = E(\sum_{ i = 1 }^{ n } (x_i - \bar{x})^2) + n\frac{1}{n}\sigma^2
+    \end{eqnarray}
+    \begin{eqnarray}
+    E(\sum_{ i = 1 }^{ n } (x_i - \bar{x})^2) = n\sigma^2 - \sigma^2 = (n-1)\sigma^2
+    \end{eqnarray}
+    ここで、
+    \begin{eqnarray}
+    s^2 = \frac{E(\sum_{ i = 1 }^{ n } (x_i - \bar{x})^2) }{n-1}
+    \end{eqnarray}
+    とおくと、
+    \begin{eqnarray}
+    E(s^2) = \sigma^2
+    \end{eqnarray}
+    となる。これから分かるように、「標本分散」という呼び方は若干誤導的で、所謂「標本分散」とは、「標本の分散」ではなく、「その期待値が母分散となるような、標本から計算されるある値」のことである。なお、「標本分散」は、不偏分散 unbiased variance とも呼ばれる。こちらの方が、誤解は招きにくい呼び方かもしれない。(ただし、名前からそれが何なののか推測できなくはあるが。)
+ </p>
         <div id="container">
                 </main>
     </div>
