@@ -8,11 +8,11 @@
 </head>
 <body>
     japonicus sum.
-<!--    <header id ="header">
-        <h1>石策竜喜のホームページ</h1>
+    <header id ="header">
+        <h1>石策竜喜のホームページ(@github)</h1>
     </header>
     <h2>統計学</h2>
-        <aside>
+<!--        <aside>
             <p>アインシュタインは \( E=mc^2 \) の公式を導きました。</p>
             \(
                 \begin{pmatrix}
@@ -43,11 +43,28 @@
             <h3>日本史</h3>
             <a href="pseudo_upper_paleolithic.html"></a><br>
     -->
-    <dd>算術平均</dd>
-    <dt>\begin{eqnarray}
+    <p></p>
+    <p>偶然性を伴った試行或いは観測を行うことを確率実験(radom experiment)という。1つの確立実験に対して、その可能な起こりうる結果の全体を標本空間(sample space)、事象空間(event space)または全事象と呼ぶ。(以下、単にΩと書けば全事象を指す。また、「事象」と「集合」を同じ意味で用いる。)標本空間の各要素を標本点(sample point)または根源事象(elementary event)という。Ωの部分集合は事象と呼ばれる。事象Aが起こるということは、集合Aに含まれる標本点のどれかが起こることである。各標本点について、その生起する確率を決めることができる。</p>
+    <p>確率の決め方には、以下の4つの方法がある。
+    <dl>
+        <dt>先験的アプローチ</dt>
+        <dd>起こり得るあらゆる場合が同じように確からしく、かつ互いに排反であるとき、あるゆる場合の数をn(Ω), 事象Aが起こる場合の数をn(Ω)とすると、事象Aが起こる確率はn(A)/n(Ω)である。このように定められる確率を先験的確率(a priori probability)という。</dd>
+        <dd>例えば、歪みの無い硬貨を投げた時に表が出る確率と裏が出る確率がともに1/2となること、歪みの無い六面体骰子を投げた時に各々の目が出る確率が全て1/6になるとことは、実験をするまでもなく当然のこととして認めてよい。よってこれらは先験的確率である。高校の数学Aで扱う確率は、全て先験的確率である。</dd>
+        <dt>経験的アプローチ</dt>
+        <dd>歪んだ骰子を振って、1の目が出る確率を考える。骰子を振った回数をnとし、そのうち1の目が出た回数を\(n_a\)とすると、nを大きくするに従い、\(\frac{n_a}{n}\)はある一定の値に近づくと考えられる。その値が1の目が出る確率とするのである。すなわち、
+            \begin{eqnarray}
+            P(A)=\lim_{n \to \infty}\frac{n_a}{n}
+            \end{eqnarray}
+    
+        </dd></dd>
+    </dl>
+    </p>
+    <dl>
+    <dt>算術平均</dt>
+    <dd>\begin{eqnarray}
         \frac{1}{n}\sum_{i=1}^n x_i = \frac{x_1 + x_2 +  \cdots + x_n}{n} 
         \end{eqnarray}
-    </dt>
+    </dd>
     <p>算術平均の性質</p>
     <ol>
         <li>平均からの偏差の和は0となる。すなわち、<br>
@@ -77,12 +94,13 @@
     ≤ \sum_{i=1}^n (x_i - a)^2 
     \end{eqnarray}
     <br>性質1により、第2項は0。等号成立は、\(\bar{x} - a = 0 \)のとき。
-    <dd>分散</dd>
-    <dt>\begin{eqnarray}
+    <dt>分散</dt>
+    <dd>\begin{eqnarray}
         \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2 
         \end{eqnarray}
-    </dt>
-    <p>分散はまた、
+    </dd>
+</dl>
+<p>分散はまた、
         \begin{eqnarray}
         \frac{1}{n}\sum_{i=1}^n x_i^2 - \bar{x}^2
         \end{eqnarray}
