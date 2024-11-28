@@ -11,9 +11,28 @@
 <header id ="header">
     <h1></h1>
 </header>
-<p>数列{\(a_n\)}が α に収束するとは、任意の ε>0 に対して、ある自然数 N が存在し、n≥N である全ての自然数 n について、\[|a_n-α|&lt;ε\]となることである。α を{\(a_n\)}の極限(値)という。</p>
+<p>数列{\(a_n\)}が α に収束するとは、任意の ε>0 に対して、ある自然数 N が存在し、n≥N である全ての自然数 n について、\[|a_n-α| \lt ε\]となることである。α を{\(a_n\)}の極限(値)という。</p>
 <p>数列{\(a_n\)}が α に収束し、またα' </p>
-<p>微分係数の定義式
+
+<h5>関数の極限</h5>
+<h6>関数の極限(1)</h6>
+<p>任意の正の実数 ε に対して、ある正の実数 δ が存在して、
+\begin{eqnarray}
+0 \lt |x-a| \lt δ ⇒ |f(x)-α| \lt ε
+\end{eqnarray}
+が成り立つとき、この値 α を x→a のときの f(x) の極限値と言い、
+\begin{eqnarray}
+\lim_{x \to a} f(x) = a
+\end{eqnarray}
+と表す。
+</p>
+<h6>関数の連続性</h6>
+<p>x=a の点とその付近で定義されている関数 y=f(x) が \(\lim_{x \to a}f(x) = f(a) \) を満たすとき、f(x)は x=a で連続であるという。</p>
+
+
+
+<h6>微分係数の定義式</h6>
+<p>
 \begin{eqnarray}
 f'(a) = \lim_{h \to 0}\frac{f(a+h)-f(a)}{h}
 \end{eqnarray}
@@ -29,12 +48,35 @@ f'(0) = \lim_{h \to 0}\frac{f(0+h)-f(0)}{h} = \lim_{h \to 0}\frac{a^h-1}{h}
 このf'(0)が1となるときの底aの値を ネイピア数e と定義するのである。
 上の式の右辺でaをeで置き換え、hをxで置き換えて、その値が定義により1と等しいことを考えると、
 \begin{eqnarray}
-\lim_{x \to 0}\frac{e^h-1}{x} = 1
+\lim_{x \to 0}\frac{e^x-1}{x} = 1
 \end{eqnarray}
-</p>
-<h6>関数の連続性</h6>
-<p>x=a の点とその付近で定義されている関数 y=f(x) が \(\lim_{x \to a}f(x) = 0 \) を満たすとき、f(x)は x=a で連続であるという。</p>
+ここで、\(e^x-1 = u とおくと、e^x = 1+u, x=/log (1+u) x→0 のとき、u→0 \)。よって、上の式の右辺は
+\begin{eqnarray}
+\lim_{x \to 0}\frac{e^x-1}{x} = \lim_{u \to 0}\frac{u}{\log (1+u)} = \lim_{u \to 0}\frac{1}{\frac{\log (1+u)}{u} } 
+\end{eqnarray}
+となり、これが1に等しいことから、
+\begin{eqnarray}
+\lim_{u \to 0}\frac{\log (1+u)}{u} =1 
+\end{eqnarray}
+となる。uをxで置き換えて、
+\begin{eqnarray}
+\lim_{x \to 0}\frac{\log (1+x)}{x} = 1 
+\end{eqnarray}
+ここで、\( \frac{\log (1+x)}{x} =\log (1+x)^{\frac{1}{x}} \)であるから、
+\begin{eqnarray}
+\lim_{x \to 0} \log (1+x)^{\frac{1}{x}} = 1 
+\end{eqnarray}
+\((1+x)^{\frac{1}{x}} \) のx→0 の極限値についてeを底とする対数を取り、その値が1であるということは、((1+x)^{\frac{1}{x}} \) のx→0 の極限値がeであるということである。即ち、
+\begin{eqnarray}
+\lim_{x \to 0}  (1+x)^{\frac{1}{x}} = e 
+\end{eqnarray}
+ここで、\(\frac{1}{x}=t とおくと、x→+0 のとき、t→+∞ ,x→-0 のとき、t→+∞ \)であるから、
+\begin{eqnarray}
+\lim_{t \to \pm ∞}  (1+\frac{1}{t})^t = e 
+\end{eqnarray}
 
+
+</p>
 <h2>統計学</h2>
 <!--        <aside>
                     </aside>
@@ -377,11 +419,11 @@ Q = nc \Delta T (J)
 \end{eqnarray}
 より、
 \begin{eqnarray}
-\C_p = \flatfrac{\Delta U}{n \Delta T } + \flatfrac{p \Delta V}{n \Delta T }
+C_p = \flatfrac{\Delta U}{n \Delta T } + \flatfrac{p \Delta V}{n \Delta T }
 \end{eqnarray}
 ここで、右辺の第1項は\( C_V \)、第2項は気体の状態方程式より R であるから、
 \begin{eqnarray}
-\C_p = C_V + R
+C_p = C_V + R
 \end{eqnarray}
 となる。この式を、マイヤーの関係という。
 </p>
