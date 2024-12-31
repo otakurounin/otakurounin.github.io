@@ -14,8 +14,9 @@
 <p>数列{\(a_n\)}が α に収束するとは、任意の ε>0 に対して、ある自然数 N が存在し、n≥N である全ての自然数 n について、\[|a_n-α| \lt ε\]となることである。α を{\(a_n\)}の極限(値)という。</p>
 <p>数列{\(a_n\)}が α に収束し、またα' </p>
 
-<h5>関数の極限</h5>
-<h5>関数の極限(1)</h5>
+<h4>関数の極限</h4>
+<h5>関数の極限(1) (収束する場合)</h5>
+<h6>(x→a のときの極限)</h6>
 <p>任意の正の実数 ε に対して、ある正の実数 δ が存在して、
 \begin{eqnarray}
 0 \lt |x-a| \lt δ ⇒ |f(x)-α| \lt ε
@@ -24,8 +25,51 @@
 \begin{eqnarray}
 \lim_{x \to a} f(x) = α
 \end{eqnarray}
-と表す。
-</p>
+と表す。</p>
+<p>論理記号で書けば、
+\begin{eqnarray}
+\forall ε \gt, \exists δ \gt 0 \ s.t. \ 0 \lt |x-a| \lt δ ⇒ |f(x)-α| \lt ε 
+\end{eqnarray}
+であるとき、\( \lim_{x \to a} f(x) = α \)</p>
+<h6>(x→∞ のときの極限)</h6>
+<p>任意の正の実数 ε に対して、ある正の実数 δ が存在して、
+\begin{eqnarray}
+x \gt δ ⇒ |f(x)-α| \lt ε
+\end{eqnarray}
+が成り立つとき、この値 α を x→∞ のときの f(x) の極限値といい、
+\begin{eqnarray}
+\lim_{x \to ∞} f(x) = α
+\end{eqnarray}
+と表す。</p>
+<p>論理記号で書けば、
+\begin{eqnarray}
+\forall ε \gt, \exists δ \gt 0 \ s.t. \ x \gt δ ⇒ |f(x)-α| \lt ε 
+\end{eqnarray}
+であるとき、\( \lim_{x \to ∞} f(x) = α \)</p>
+<h6>(x→-∞ のときの極限)</h6>
+<p>任意の正の実数 ε に対して、ある負の実数 δ が存在して、
+\begin{eqnarray}
+x \lt δ ⇒ |f(x)-α| \lt ε
+\end{eqnarray}
+が成り立つとき、この値 α を x→-∞ のときの f(x) の極限値といい、
+\begin{eqnarray}
+\lim_{x \to -∞} f(x) = α
+\end{eqnarray}
+と表す。</p>
+<p>論理記号で書けば、
+\begin{eqnarray}
+\forall ε \gt, \exists δ \lt 0 \ s.t. \ x \lt δ ⇒ |f(x)-α| \lt ε 
+\end{eqnarray}
+であるとき、\( \lim_{x \to -∞} f(x) = α \)</p>
+<h5>ε-δ論法を使った極限の求め方</h5>
+<h6>\( \lim_{x \to a}\frac{3x^2 - 3a^2}{x-a} \)</h6>
+<p>まずは、高校でやったように、\( \lim_{x \to a}\frac{3x^2 - 3a^2}{x-a} = \lim_{x \to a}\frac{3(x + a)(x - a)}{x-a} = \lim_{x \to a}3(x+a) = 6a \) として、極限値 6a を求める。 (この部分は答案には書かなくていい。)</p>
+<p>それから、ε-δ論法を使って、\( 任意の正の実数 ε に対して、ある正の実数 δ が存在して、0 \lt |x-a| \lt δ ならば |\frac{3x^2 - 3a^2}{x-a}-6a| \lt ε \ (*) \) となることを示す。</p>
+<p>\[ |\frac{3x^2 - 3a^2}{x-a}-6a| = 3(x + a) - 6a | = 3|x - a| \lt ε \]
+とすると、\(|x-1| \lt \frac{ε}{2} \)</p>
+<p>よって、\(δ \lt \frac{ε}{2} \) となるようにδを定めると、(*)は成り立つ。</p>
+<p>すなわち、どんなに小さな正の数 ε が与えられても、\(0 \lt δ \lt \frac{ε}{2} \) となる δ は存在し、(*)は成り立つ。</p>
+<hr>
 <h5>関数の極限の性質</h5>
 <p>\(\lim_{x \to a} f(x) = α, \lim_{x \to a} g(x) = β \)とする。</p>
 <ol>
@@ -50,6 +94,45 @@
 <p>\(任意の正の実数 ε をとる。\lim _{x \to a} f(x) = α であるから、ある正の実数 δ_0 が存在して、0 \lt |x-a| \lt δ_0 である全ての x について、| f(x)-α | \lt ε 。このとき、α-ε \leq α-ε であるから、|f(x)| \leq max \{|α-ε|, |α+ε|, |β| \} とすると、ε \neq 0 より、|α-ε|, |α+ε| の少なくとも一方は 0 でないから、M \gt 0 \)
 <p>\( ここで、M=max \{ \} \)</p>
 </p>
+<hr>
+<h4>三角関数に関する極限</h4>
+<h5>\( \lim _{x \to 0}\frac{\sin x}{x} = 1 \)</h5>
+<p>この式が基本である。あとの2つの式はこれから導ける。</p>
+<p>(i) \( 0 \lt x \lt \frac{π}{2}\)のとき</p>
+単位円の周上で、角 0 の点を B、角 x の点を A とする。また、単位円の中心を O とし、直線 OA と直線 x=1 の交点をCとすると、
+\[ \triangle ABO \lt 扇形ABO \lt \triangle ABO  \] 
+\[ \frac{1}{2} \cdot 1 \cdot 1 \sin x \lt \frac{1}{2} \cdot 1^2 \cdot x  \lt \frac{1}{2} \cdot 1 \cdot \tan x \]
+\[ \sin x \lt x \lt \frac{\sin x}{\cos x} \] 
+左側の不等式について、
+\[ \sin x \lt x より、\frac{\sin x}{x} \lt 1  \]
+\( (x \gt 0 より、xで割っても不等号の向きは変わらない。) \)
+右側の不等式について、
+\[ x \lt \frac{\sin x}{\cos x} より、\cos x \lt \frac{\sin x}{x}  \]
+\( ((x \gt 0, \cos x \gt 0 より より、x, \cos x で割っても不等号の向きは変わらない。) \)
+以上より、
+\[ \cos x \lt \frac{\sin x}{x} \lt 1 \tag{①} \]  
+\( \lim _{x \to +0} \cos x =0 と、はさみ打ちの原理より、\lim _{x \to +0}\frac{\sin x}{x} = 1 \)
+<p>(ii) \( 0 \lt x \lt \frac{π}{2}\)のとき</p>
+\( t= -x とおくと、t \gt 0、①式に x=-t を代入すると、\)
+\( \lim _{x \to -0}\frac{\sin x}{x} = \lim _{x \to -0}\frac{\sin (-x)}{-x} \lim _{t \to +0} = \frac{\sin t}{t} = 1 \)( (i)の結果を利用した。 )
+以上(i),(ii)より、xの正負に関わらず、\( \lim _{x \to 0}\frac{\sin x}{x} = 1 \)
+<h5>\( \lim _{x \to 0}\frac{\tan x}{x} = 1 \)</h5>
+<p>上の結果を使えば、
+\[ \lim _{x \to 0}\frac{\tan x}{x} = \lim _{x \to 0}\frac{1}{x} \cdot \frac{\sin x}{\cos x} = \lim _{x \to 0}\frac{\sin x}{x} \cdot \lim _{x \to 0}\frac{1}{\cos x} = 1 \cdot \frac{1}{1} = 1 \]
+</p>
+<h5>\( \lim _{x \to 0}\frac{1 - \cos x}{x^2} = \frac{1}{2} \)</h5>
+\begin{eqnarray}
+\lim _{x \to 0}\frac{1 - \cos x}{x^2} = \lim _{x \to 0}\frac{(1 - \cos x)(1 + \cos x)}{x^2(1 + \cos x)} = \lim _{x \to 0}\frac{1 - (\cos x)^2}{x^2(1 + \cos x)} = \lim _{x \to 0}\frac{(\sin x)^2}{x^2(1 + \cos x)} = \lim _{x \to 0}(\frac{\sin x}{x})^2\lim _{x \to 0}\frac{1}{1 + \cos x} = 1^2 \cdot \frac{1}{1+1} = \frac{1}{2} 
+\end{eqnarray}
+<h5>問題例</h5>
+<h6>\lim _{x \to π}\frac{π - x}{\sin 2x}</h6>
+<p>\( x-π = t とおくと、x→π で t→0 , \sin 2x = \sin 2(π+t) = \sin(2π+2t) = \sin 2t \) であるから、</p>
+\[ \lim _{x \to π}\frac{π - x}{\sin 2x} = \lim _{t \to 0}\frac{-t}{\sin 2t} = -\frac{1}{2} \cdot \lim _{2t \to 0}\frac{2t}{\sin 2t} = -\frac{1}{2} \cdot 1 = -\frac{1}{2}\]
+<h6>\( \lim _{x \to π}\frac{\tan(\sin x)}{x} \)</h6>
+<p>\( \sin x = θ とおくと、x→0 で θ→0 であるから、\)
+\[ \lim _{x \to π}\frac{\tan(\sin x)}{x} = \lim _{x \to 0, θ \to 0}\frac{\tan θ}{θ} \cdot \frac{θ}{x} = \lim _{θ \to 0}\frac{\tan θ}{θ} \cdot \frac{\sin x}{x} = 1 \cdot 1 = 1 \]
+</p>
+<hr>
 <h4>関数の連続性</h4>
 <p>x=a の点とその付近で定義されている関数 y=f(x) が \(\lim_{x \to a}f(x) = f(a) \) を満たすとき、f(x)は x=a で連続であるという。</p>
 <p>この等式が成り立つためには、そもそもこの等式の左辺等辺それぞれの式が存在している必要がある。左辺の \(\lim_{x \to a}f(x) が存在するということは、点 x=a における右側極限と左側極限が一致すること。すなわち、\lim_{x \to a+0}f(x) = \lim_{x \to a-0}f(x) であることであり、右辺の f(a) が存在するということは、x=a が f(x) の定義域に含まれることである。\)</p>
@@ -68,7 +151,25 @@
 <p>要するに、閉区間の両端において、半開区間においてはその閉じた方の端において、片側連続連続である。</p>
 <p>\(例えば、 f(x)=[x] とすると、f(x) は x=n (nは整数) において右側連続だが、左側連続ではない。\) </p>
 <h5>区間における連続</h5>
-<p>\(I を1つの区間とする。関数 f が任意の a \in I において連続であるとき、「f は I において連続である。」という。I が閉区間 [a,b] である場合には、f が I において連続であるとは、f が a \lt c \lt b である任意の c において連続で、aにおいては右側連続、bにおいて左側連続であることである。半開区間[a,+∞) において連続であるとは、 \)</p>
+<p>\(I を1つの区間とする。関数 f が任意の a \in I において連続であるとき、「f は I において連続である。」という。I が閉区間 [a,b] である場合には、f が I において連続であるとは、f が a \lt c \lt b である任意の c において連続で、aにおいては右側連続、bにおいて左側連続であることである。半開区間[a,+∞) において連続であるとは、c \gt a を満たす任意の c において連続で、かつ a において右側連続であることである。\)</p>
+<p>\( 有理関数 \frac{f(x)}{g(x)} は、分母を 0 にする値を除けば連続である。すなわち、有理関数は分母を 0 とする x の値によって定義域がいくつかの区間に分けられるが、それらの区間のそれぞれにおいて連続である。例えば、f(x)=\frac{1}{(x-α)(x-β)} (α \lt β) は、区間 (-∞,α),(α,β),(β,∞) において連続である。 \)</p>
+<h5>集合による連続の定義</h5>
+<p>x軸上の区間に限らない、より一般的な連続の定義は次のようになる。</p>
+<p>\( A を  \mathbb{R} の空でない部分集合、f: A→\mathbb{R} を関数とする。)</p>
+<p>(1) \( a \in A とする。 \lim_{x \to a}f(x) = f(a) が成り立つとき、f(x)は x=a において連続であるという。 \)</p>
+<p>(2) \( 任意の a \in A に対して f(x) が x=a で連続なとき、f は A で連続であるという。 \)</p>
+<h5>関数の定数倍・和・積・商、合成関数の連続</h5>
+<p>\( f(x), g(x) が x=a で連続であるとすると、\)  
+    <ol>
+        <li>\[\lim_{x \to a} k f(x) = k f(a) (k \in \mathbb{R}) \]</li>
+        <li>\[\lim_{x \to a} {f(x) \pm g(x) } = f(a) \pm g(a) \]</li>
+        <li>\[\lim_{x \to a} f(x)g(x) = f(a)g(a) \]</li>
+        <li>\[\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{f(a)}{g(a)} \quad a の近傍で g(x)\neq 0\] </li>
+    </ol>
+であるから、\( k f(x), f(x) \pm g(x), f(x)g(x), \frac{f(x)}{g(x)} は x=a で連続である。 \)
+</p>
+<p>\( A, B を \mathbb{R} の空でない部分集合、f: A→\mathbb{R} を \{f(x) | x \in A \} \subset B を満たす関数、g: B →\mathbb{R} を 関数とし、a \in A とする。f(x), g(y) がそれぞれ x=a, y=f(a) で連続ならば、(g /circ f)(x) は x = a で連続。すなわち、\lim_{x \to a} (g /circ f)(x) = (g /circ f)(a) \)</p>
+<hr>
 <h4>微分係数と導関数</h4>
 <h5>微分係数の定義式</h5>
 <p>
@@ -79,6 +180,91 @@ f'(a) = \lim_{h \to 0}\frac{f(a+h)-f(a)}{h}
 f'(a) = \lim_{b \to a}\frac{f(b)-f(a)}{b-a}
 \end{eqnarray}
 </p>
+<h5>微分可能</h5>
+<h6>微分可能の定義</h6>
+<p>関数 f(x) が x=a で微分可能であるとは、x=a における微分係数 f'(a) が存在すること、すなわち、x=a における右側極限と左側極限が一致することである。式で表せば、
+\[ \lim_{h \to +0}\frac{f(a+h)-f(a)}{h} = \lim_{h \to -0}\frac{f(a+h)-f(a)}{h} \]
+であることである。</p>
+<p>なお、x=a で微分可能であるにはその定義から、両側から x に近づいていけることが絶対に必要なので、閉区間の端はどうしても微分可能でない。すなわち、連続における片側連続のような、「片側微分可能」なるものは存在しない。微分可能な区間は、必ず開区間である。</p>
+<h5>微分可能と連続との関係</h5>
+<p>\( f(x) が x=a で微分可能であれば、x=a で連続である。\)</p>
+<h6>微分可能であればで連続であることの証明</h6>
+<p>\( f(x) が x=a で微分可能であるから、\lim_{x \to a}\frac{f(x)-f(a)}{x-a} = f'(a) \)
+よって、
+\begin{eqnarray}
+\lim_{x \to a} (f(x)-f(a) ) = \lim_{x \to a}\frac{f(x)-f(a)}{x-a} \cdot (x-a) = f'(a) \ cdot 0 =0 \quad ①
+\end{eqnarray}
+一方、
+\begin{eqnarray}
+\lim_{x \to a} (f(x)-f(a) ) = \lim_{x \to a}f(x) - \lim_{x \to a}f(a) = \lim_{x \to a}f(x) - f(a) =  \quad ②
+\end{eqnarray}
+\( ①、②より、\lim_{x \to a}f(x) - f(a) = 0 であるから、\lim_{x \to a}f(x) = f(a) \)</p>
+<p>よって、f(x) が x=a で微分可能であれば、x=a で連続である。</p>
+<p>\( 上の命題が真であるから、当然、その対偶も成り立つ。すなわち、f(x) が x=a 連続でなければ、x=a で微分可能でない。\)</p>
+<p>\( 逆は成り立たない。すなわち、f(x) が x=a 連続であっても、x=a で微分可能とは限らない。\)</p>
+<p>\( 図形的に考えると、連続であるとは「グラフがつながっていること」、微分可能であるとは、「グラフがなめらかであること」であるから、なめらかであれば当然つながっているが、連続であっても、(尖っているところがあって)なめらかでない場合もあるということである。連続であるがなめらかでない関数の典型的な例が y = |x| で、\)</p>
+\[ \lim_{h \to +0}\frac{f(0+h)-f(0)}{h} = \lim_{h \to +0}\frac{|0+h| - |0|}{h} = \lim_{h \to +0}\frac{|h|}{h} = = \lim_{h \to +0}\frac{h}{h} = 1 \]
+\( (h \gt 0 であるから、|h|=h) \)
+\[ \lim_{h \to -0}\frac{f(a+h)-f(a)}{h} = \lim_{h \to -0}\frac{|0+h| - |0|}{h} = \lim_{h \to -0}\frac{|h|}{h} = \lim_{h \to -0}\frac{-h}{h} = -1  \]
+\( (h \lt 0 であるから、|h|=-h) \)
+となって、
+\[ \lim_{h \to +0}\frac{f(a+h)-f(a)}{h} \neq \lim_{h \to -0}\frac{f(a+h)-f(a)}{h} \]
+であるので、\( y = |x| は x=0 で微分可能でない。 \)
+<hr>
+<h4>積・商・合成関数・逆関数の微分</h4>
+<h5>積の微分</h5>
+<p>
+\begin{eqnarray}
+\{ f(x) \cdot g(x) \}' = \lim_{h \to 0}\frac{f(x+h)g(x+h) - f(x)g(x) }{h} = \lim_{h \to 0}\frac{f(x+h)g(x+h) - f(x)g(x+h) + f(x)g(x+h) - f(x)g(x) }{h} = \lim_{h \to 0}\frac{ g(x+h)\{ f(x+h) - f(x) \} + f(x)g(x+h) - g(x) }{h} = \lim_{h \to 0}\frac{f(x+h) - f(x) }{h}\lim_{h \to 0}g(x+h) + f(x)\lim_{h \to 0}\frac{g(x+h) - g(x) }{h} = f'(x)g(x) + f(x)g'(x) 
+\end{eqnarray}
+</p>
+<h5>商の微分</h5>
+\begin{eqnarray}
+\{ \frac{f(x)}{g(x)} \}'
+ = \lim_{h \to 0}\frac{1}{h} \cdot \{ \frac{f(x+h)}{g(x+h)} - \frac{f(x)}{g(x)} \} 
+ = \lim_{h \to 0}\frac{1}{h} \cdot \frac{f(x+h)g(x) - f(x)g(x+h)}{g(x+h)g(x)} 
+ = \lim_{h \to 0}\frac{1}{h} \cdot \frac{f(x+h)g(x) - f(x)g(x) + f(x)g(x) f(x)g(x+h)}{g(x+h)g(x)} 
+ = \lim_{h \to 0}\frac{1}{h} \cdot \frac{\{f(x+h) - f(x) \}g(x) - f(x)\{g(x+h)-g(x)\} }{g(x+h)g(x)} 
+ = \lim_{h \to 0}\frac{1}{g(x+h)g(x)} \cdot \{ \frac{f(x+h) - f(x)}{h} \cdot g(x) - f(x) \cdot \frac{g(x+h)-g(x)}{h} \}
+ = \lim_{h \to 0}\frac{1}{g(x+h)g(x)} \cdot \{ g(x) \cdot \lim_{h \to 0}\frac{f(x+h) - f(x)}{h} - f(x) \cdot \lim_{h \to 0}\frac{g(x+h)-g(x)}{h} \}
+ = \frac{1}{\{g(x)\}^2} \cdot \{ f'(x)g(x) - f(x)g'(x) \}
+\end{eqnarray}
+<h5>合成関数の微分</h5>
+<p>\( y=f(u), u=g(x) について、y を x で微分するにはどうしたらよいか。結論から言うと、 {dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} とすればいいのだが、これはまずは簡易な方法で示す。\)</p>
+<h6>簡単な証明</h6>
+<p>\( x が微小な変化をするとき、u の変化も微小である。すなわち、\lim_{x \to 0}u=0 であるから、\lim_{x \to 0}\frac{dy}{dx} = \lim_{x \to 0}\frac{dy}{du} \cdot \frac{du}{dx} = \lim_{u \to 0}\frac{dy}{du} \cdot \lim_{x \to 0}\frac{du}{dx} = y'(u)g'(x) = \frac{dy}{du} \cdot \frac{du}{dx} \)</p>
+<p>より本格的な照明は以下。</p>
+\( y=f(u), u=g(x) とすると、g(x+h)=g(x)+t とおける。 h → 0 で t → 0 であるから、\)
+\begin{eqnarray}
+\frac{dy}{dx} = \lim_{h \to 0}\frac{f(g(x+h)) - f(g(x)) }{h}
+= \lim_{h \to 0, u \to 0}\frac{f(u+t) - f(u) }{t}\cdot\frac{t}{u}
+= \lim_{t \to 0}\frac{f(u+t) - f(u) }{t} \cdot \lim_{h \to 0}\frac{g(x+h) - g(x) }{h} = y'(u)g'(x) = \frac{dy}{du} \cdot \frac{du}{dx}
+\end{eqnarray}
+<hr>
+<h5>三角関数の微分</h5>
+<h6>\( \sin x の微分 \)</h6>
+<p>
+\begin{eqnarray}
+(\sin x)' = \lim_{h \to 0}\frac{\sin (x+h) - \sin x}{h} = \lim_{h \to 0}\frac{1}{h} 2 \cos \frac{2x+h}{2} \sin \frac{h}{2} = \lim_{\frac{h}{2} \to 0} \frac{\sin \frac{h}{2}}{\frac{h}{2}} \cdot \lim_{h \to 0} \cos (x + \frac{h}{2}) = 1 \cdot \cos x = \cos x  
+\end{eqnarray}
+\( \sin A - \sin B = 2 \cos \frac{A+B}{2} \sin \frac{A-B}{2} と、 \lim_{x \to 0}\frac{\sin x}{x} = 1 を利用している。\)
+</p>
+<h6>\( \cos x の微分 \)</h6>
+\begin{eqnarray}
+(\cos x)' = \lim_{h \to 0}\frac{\cos (x+h) - \cos x}{h} = \lim_{h \to 0}\frac{1}{h} \cdot -2 \sin \frac{2x+h}{2} \sin \frac{h}{2} = - \lim_{\frac{h}{2} \to 0} \frac{\sin \frac{h}{2}}{\frac{h}{2}} \cdot \lim_{h \to 0} \sin (x + \frac{h}{2}) = -1 \cdot \sin x = -\sin x  
+\end{eqnarray}
+\( \cos A - \cos B = -2 \sin \frac{A+B}{2} \sin \frac{A-B}{2} と、 \lim_{x \to 0}\frac{\sin x}{x} = 1 を利用している。\)
+<h6>\( \tan x の微分 \)</h6>
+\begin{eqnarray}
+(\tan x)' = \lim_{h \to 0}\frac{\tan (x+h) - \tan x}{h} = \lim_{h \to 0}\frac{1}{h} \cdot \{1+\tan (x+h)\tan x \} \tan \{ (x+h) -x \} = \lim_{h \to 0} \frac{\tan h}{h} \lim_{h \to 0} {1+\tan(x+h)\tan x} = 1 + (\tan x)^2 = \frac{1}{\{\cos x\}-2}  
+\end{eqnarray}
+\( \tan(α - β) = \frac{\tan α - \tan β}{1 + \tan α \tan β}  と、 \lim_{x \to 0}\frac{\tan x}{x} = 1 を利用している。\)
+<p>商の微分を利用した\( \tan x \)の微分の別解
+\begin{eqnarray}
+(\tan x)' = \{\frac{\sin x}{\cos x} \}' = \frac{(\sin x)' \cos x - \sin x (\cos x)'}{(\cos x)^2 } = \frac{\cos x \cdot \cos x - \sin x \cdot (-\sin x)}{(\cos x)^2 } = \frac{(\cos x)^2 + (\sin x)^2}{(\cos x)^2 } = \frac{1}{(\cos x)^2 }
+\end{eqnarray}
+</p>
+<hr>
 <h5>自然対数の底(ネイピア数)e</h5>
 <p>\(f(x)=a^x (a>1) \) の x=0 における微分係数が1となるときの底aの値を e と定義する。すなわち、微分係数の定義式で \(f(x)=a^x \) とし、x=0 とすると、 
 \begin{eqnarray}
@@ -113,7 +299,9 @@ f'(0) = \lim_{h \to 0}\frac{f(0+h)-f(0)}{h} = \lim_{h \to 0}\frac{a^h-1}{h}
 \begin{eqnarray}
 \lim_{t \to \pm ∞}  (1+\frac{1}{t})^t = e 
 \end{eqnarray}
-<h5>\( a^x の微分\)</h5>
+<hr>
+<h5>指数関数の微分</h5>
+<h6>\( a^x の微分\)</h6>
 <p>\( f(x) = a^x (a \gt 0, a \neq 1 ) \)とする、
 \begin{eqnarray}
 \ (a^x)' = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = \lim_{h \to 0} \frac{a^{x+h} - a^x}{h} = \lim_{h \to 0} \frac{a^x (a^h - 1)}{h} = a^x \lim_{h \to 0} \frac{a^h - 1}{h}
@@ -123,8 +311,54 @@ f'(0) = \lim_{h \to 0}\frac{f(0+h)-f(0)}{h} = \lim_{h \to 0}\frac{a^h-1}{h}
 \begin{eqnarray}
 h \log a = \log (u+1)
 \end{eqnarray}
-
+\begin{eqnarray}
+\frac{1}{h} = \frac{\log a}{\log (u+1)} 
+\end{eqnarray}
+であるから、
+\begin{eqnarray}
+\frac{a^x - 1 }{h} = \frac{u \log a }{\log (u+1)} 
+\end{eqnarray}
+ここで、h→0 のとき u→0 であるから、
+\begin{eqnarray}
+\lim_{h \to 0} \frac{a^h - 1}{h} = \lim_{u \to 0} \frac{u \log a }{\log (u+1)} = (\log a) \lim_{u \to 0} \frac{u}{\log (u+1)} = \log a \cdot 1 = \log a 
+\end{eqnarray}
+(自然対数の底 e の定義の一つである、\( \lim_{x \to 0} \frac{\log (x+1)}{x} = 1\))を用いた。
+以上より、
+\[ (a^x)' = (\log a)a^x \]
+<h6>\( e^x の微分\)</h6>
+\( この特殊な場合として、a=e とすると、\log e = 1 であるから、(e^x)' = e^x となる。\)
 </p>
+<hr>
+<h5>対数関数の微分</h5>
+<p>まず、\( \log x の 微分がどのようになるかを見てみる。\)</p>
+<h6>\( \log x の 微分\)</h6>
+<p>\( f(x) = \log x とおくと、\)
+\begin{eqnarray}
+f'(x) = \lim_{h \to 0}\frac{f(x+h)-f(x)}{h} = \lim_{h \to 0}\frac{\log(x+h) - \log x}{h} = \lim_{h \to 0} \frac{1}{h} \log \frac{x+h}{x} = \lim_{h \to 0} \frac{1}{h} \log (1+\frac{h}{x}) = \lim_{h \to 0} \log (1+\frac{h}{x})^{\frac{1}{h}} = \lim_{h \to 0} \log \{(1+\frac{h}{x})^{\frac{x}{h}}\}^{\frac{1}{x}} = \frac{1}{x} \lim_{h \to 0} \log \{(1+\frac{h}{x})^{\frac{x}{h}}\}
+\end{eqnarray}
+\( ここで、u=\frac{h}{x} とおくと、h→0 のとき u→0 であるから、\)
+\begin{eqnarray}
+\lim_{h \to 0} \log \{(1+\frac{h}{x})^{\frac{x}{h}}\} = \lim_{u \to 0} \log \{(1+u)^{\frac{1}{u}}\} = \log e = 1
+\end{eqnarray}
+以上より、
+\begin{eqnarray}
+(\log x)' = \frac{1}{x}
+\end{eqnarray}
+<h6>\( \log_{a} x の 微分\)</h6>
+\begin{eqnarray}
+(\log_{a} x)' = (\frac{\log x}{\log a})' = \frac{1}{\log a}(\log x)' = \frac{1}{(\log a)x}
+\end{eqnarray}
+</p>
+<hr>
+<h5>逆三角関数の微分</h5>
+<h6>\( \arcsin x の微分 \)</h6>
+\( y=\arcsin x (-1 \lt x \lt 1) とおくと、x = \sin y (-\frac{π}{2} \lt y \lt \frac{π}{2}) \)
+\[ \frac{dx}{dy} = (\sin y)' = \cos y \]
+\[ \frac{dy}{dx} = \frac{1}{\cos y} = \frac{1}{\sqrt {1 - (\sin y)^2 }}= \frac{1}{\sqrt{1-x^2}} \]
+<h6>\( \arccos x の微分 \)</h6>
+\( y=\arccos x (-1 \lt x \lt 1) とおくと、x = \cos y (0 \lt y \lt π) \)
+\[ \frac{dx}{dy} = (\cos y)' = - \sin y \]
+\[ \frac{dy}{dx} = \frac{1}{- \sin y} = - \frac{1}{\sqrt {1 - (\cos y)^2 }}= - \frac{1}{\sqrt{1-x^2}} \]
 <h2>統計学</h2>
 <!--        <aside>
                     </aside>
@@ -172,6 +406,50 @@ h \log a = \log (u+1)
 <p>\(種皮が黄色であるものの集合をC_1, 種皮が緑色であるものの集合をC_2, 種皮に皴が有るもの集合をD_1, 種皮に皴が無いもの集合をD_2とする。C_1とC_2, D_1とD_2は互いに排反である。\)</p>
 <p>種皮の色と、皴の有無だけに関心があるとすると、この豆の性質についての集合族は、</p>
 
+<dt>確率変数</dt>
+<dd>試行がもたらす事象を実数に対応させる関数を確率変数という。この関数が出力する値のことを確率変数の実現値という。(ただし、誤解の余地がなければ、確率変数の実現値のことを単に確率変数ということもある。)</dd>
+<p>標本空間に含まれる事象が有限個の場合、この標本空間に関して定められた確率変数は、根源事象と個々の実現値を一対一対応させる。すなわち、根源事象\[a_1,a_2,\ldots,a_n\]に対して、確率変数の出力結果(実現値)\[x_1,x_2,\ldots,x_n\]を対応させることができる。このような確率変数を、離散型確率変数(discrete random varible)と呼ぶ。</p>
+<p>この確率変数の出力結果それぞれについて、その値が生じる確率を定めることができる。確率変数の出力結果(実現値)を入力とし、その確率を出力とする関数を確率関数という。なお、異なる実現値が同じ確率で生じることがあるので、確率関数は一般に一対一対応ではない。</p>
+<p>なぜ、事象とその発生確率を直接に結び付けず、間に確率変数というものを介在させるかというと、確率変数の実現値は実数なので、期待値の計算など、数値的な処理が可能になるという利点があるからである。</p>
+<p>例1: 硬貨を投げて出る面を標本空間とすると、根源事象は「表」、「裏」の2つである。ここで、生起した根源事象が「表」ならば1、「裏」ならば0 を出力する確率変数をXとすると、X(表)=1, X(裏)=0 と書くことができる。ひとたび確率変数を定めてしまうと、元の根源事象について言及する必要はもうないので、単に X=0,1 と書いて、Xの出力結果(実現値)が0または1であることを示してもよい。そして、確率関数をPとすると、\[P(0)=\frac{1}{2}, P(0)=\frac{1}{2}\]と定めることができる。表にすると次のようになる。
+    <table>
+        <tr><th>根源事象</th><td>表</td><td>裏</td></tr>
+        <tr><th>確率変数 X</th><td>1</td><td>0</td></tr>
+        <tr><th>確率 P</th><td>1/2</td><td>1/2</td></tr>
+    </table>
+1段目に2段目を対応させるのが確率変数、2段目に3段目を対応させるのが確率関数である。</p>
+<p>例2: 骰子を振って出る目を根源事象とすると、
+    <table>
+        <tr><th>根源事象</th><td>1の目</td><td>2の目</td><td>3の目</td><td>4の目</td><td>5の目</td><td>6の目</td></tr>
+        <tr><th>確率変数 X</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+        <tr><th>確率 P</th><td>1/6</td><td>1/6</td><td>1/6</td><td>1/6</td><td>1/6</td><td>1/6</td></tr>
+    </table>
+</p>
+<p>以上をまとめて、</p>
+<p>確率変数がとるn個の有限な実数値に対して、確率関数Pは
+\begin{eqnarray}
+P(x_1) = p_1, P(x_2) = p_2, \ldots, P(x_n) = p_n 
+\end{eqnarray}
+をとり、他の実数については\(P(x)=0\)。ただし、\(0&ltp_i≤1 (i=1,\ldots,n) \) </p>
+
+<h4>期待値</h4>
+<h5>離散型確率変数の期待値</h5>
+<p>離散型確率変数 X の実現値とその生起確率 P を
+<table>
+    <tr><th>確率変数 X</th><td>\(x_1\)</td><td>\(x_2\)</td><td>\(\cdots\)</td><td>\(x_n\)</td></tr>
+    <tr><th>確率 P</th><td>\(p_1\)</td><td>\(p_2\)</td><td>\(\cdots\)</td><td>\(p_n\)</td></tr>
+</table>
+とすると、Xの期待値は、
+\begin{eqnarray}
+E(x) = \sum_{i=1}^{n}x_i p_i
+\end{eqnarray}
+g(x) の期待値は、
+\begin{eqnarray}
+E(g(x)) = \sum_{i=1}^{n}g(x_i) p_i
+\end{eqnarray}
+これは、確率変数が無限個の実現をとる場合でも成り立つ。ただし、\( \sum_{i=1}^{n}g(x_i) p_i \) が有限の値である必要がある。
+</p>
+<p>(\ X の期待値 E(X) のことを X の確率分布の平均ともいい、μで表す。μ_xと書くこともある。\)</p>
 
 <dl>
 <dt>算術平均</dt>
@@ -277,50 +555,6 @@ E(s^2) = \sigma^2
 \end{eqnarray}
 となる。これから分かるように、「標本分散」という呼び方は若干誤導的で、所謂「標本分散」とは、「標本の分散」ではなく、「その期待値が母分散となるような、標本から計算されるある値」のことである。なお、「標本分散」は、不偏分散 unbiased variance とも呼ばれる。こちらの方が、誤解は招きにくい呼び方かもしれない。(ただし、名前からそれが何なののか推測できなくはあるが。)
 </p>
-<dt>確率変数</dt>
-<dd>試行がもたらす事象を実数に対応させる関数を確率変数という。この関数が出力する値のことを確率変数の実現値という。(ただし、誤解の余地がなければ、確率変数の実現値のことを単に確率変数ということもある。)</dd>
-<p>標本空間に含まれる事象が有限個の場合、この標本空間に関して定められた確率変数は、根源事象と個々の実現値を一対一対応させる。すなわち、根源事象\[a_1,a_2,\ldots,a_n\]に対して、確率変数の出力結果(実現値)\[x_1,x_2,\ldots,x_n\]を対応させることができる。このような確率変数を、離散型確率変数(discrete random varible)と呼ぶ。</p>
-<p>この確率変数の出力結果それぞれについて、その値が生じる確率を定めることができる。確率変数の出力結果(実現値)を入力とし、その確率を出力とする関数を確率関数という。なお、異なる実現値が同じ確率で生じることがあるので、確率関数は一般に一対一対応ではない。</p>
-<p>なぜ、事象とその発生確率を直接に結び付けず、間に確率変数というものを介在させるかというと、確率変数の実現値は実数なので、期待値の計算など、数値的な処理が可能になるという利点があるからである。</p>
-<p>例1: 硬貨を投げて出る面を標本空間とすると、根源事象は「表」、「裏」の2つである。ここで、生起した根源事象が「表」ならば1、「裏」ならば0 を出力する確率変数をXとすると、X(表)=1, X(裏)=0 と書くことができる。ひとたび確率変数を定めてしまうと、元の根源事象について言及する必要はもうないので、単に X=0,1 と書いて、Xの出力結果(実現値)が0または1であることを示してもよい。そして、確率関数をPとすると、\[P(0)=\frac{1}{2}, P(0)=\frac{1}{2}\]と定めることができる。表にすると次のようになる。
-    <table>
-        <tr><th>根源事象</th><td>表</td><td>裏</td></tr>
-        <tr><th>確率変数 X</th><td>1</td><td>0</td></tr>
-        <tr><th>確率 P</th><td>1/2</td><td>1/2</td></tr>
-    </table>
-1段目に2段目を対応させるのが確率変数、2段目に3段目を対応させるのが確率関数である。</p>
-<p>例2: 骰子を振って出る目を根源事象とすると、
-    <table>
-        <tr><th>根源事象</th><td>1の目</td><td>2の目</td><td>3の目</td><td>4の目</td><td>5の目</td><td>6の目</td></tr>
-        <tr><th>確率変数 X</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
-        <tr><th>確率 P</th><td>1/6</td><td>1/6</td><td>1/6</td><td>1/6</td><td>1/6</td><td>1/6</td></tr>
-    </table>
-</p>
-<p>以上をまとめて、</p>
-<p>確率変数がとるn個の有限な実数値に対して、確率関数Pは
-\begin{eqnarray}
-P(x_1) = p_1, P(x_2) = p_2, \ldots, P(x_n) = p_n 
-\end{eqnarray}
-をとり、他の実数については\(P(x)=0\)。ただし、\(0&ltp_i≤1 (i=1,\ldots,n) \) </p>
-
-<h4>期待値</h4>
-<h5>離散型確率変数の期待値</h5>
-<p>離散型確率変数 X の実現値とその生起確率 P を
-<table>
-    <tr><th>確率変数 X</th><td>\(x_1\)</td><td>\(x_2\)</td><td>\(\cdots\)</td><td>\(x_n\)</td></tr>
-    <tr><th>確率 P</th><td>\(p_1\)</td><td>\(p_2\)</td><td>\(\cdots\)</td><td>\(p_n\)</td></tr>
-</table>
-とすると、Xの期待値は、
-\begin{eqnarray}
-E(x) = \sum_{i=1}^{n}x_i p_i
-\end{eqnarray}
-g(x) の期待値は、
-\begin{eqnarray}
-E(g(x)) = \sum_{i=1}^{n}g(x_i) p_i
-\end{eqnarray}
-これは、確率変数が無限個の実現をとる場合でも成り立つ。ただし、\( \sum_{i=1}^{n}g(x_i) p_i \) が有限の値である必要がある。
-</p>
-<p>(\ X の期待値 E(X) のことを X の確率分布の平均ともいい、μで表す。μ_xと書くこともある。\)</p>
 <p>1辺の長さL、体積Vの立方体の容器の中で運動する気体分子を考える。この容器の中には同じ種類の気体分子がN個入っているとする。<br>
 容器の辺と平行にx軸、y軸、z軸を取る。容器の中の1つの気体分子に着目し、この分子が速度
 \begin{eqnarray}
